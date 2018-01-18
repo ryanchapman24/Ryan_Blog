@@ -265,6 +265,14 @@ namespace Ryan_Blog.Controllers
             return View();
         }
 
+        //
+        // GET: /Account/ResetPasswordConfirmation
+        [AllowAnonymous]
+        public ActionResult ResetPasswordConfirmation()
+        {
+            return View();
+        }
+
         [HttpGet]
         [AllowAnonymous]
         public ActionResult ResendEmailConfirmation()
@@ -272,7 +280,7 @@ namespace Ryan_Blog.Controllers
             return View();
         }
 
-        [HttpGet]
+        [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> ResendEmailConfirmation(ForgotPasswordViewModel model)
@@ -288,18 +296,6 @@ namespace Ryan_Blog.Controllers
             return RedirectToAction("ConfirmationSent");
         }
         public ActionResult ConfirmationSent()
-        {
-            return View();
-    }
-
-
-
-
-
-        //
-        // GET: /Account/ResetPasswordConfirmation
-        [AllowAnonymous]
-        public ActionResult ResetPasswordConfirmation()
         {
             return View();
         }

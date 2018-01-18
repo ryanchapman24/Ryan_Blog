@@ -60,7 +60,7 @@
                             <input type="hidden" name="Slug" value="@Model.Slug" />
                             <textarea class="form-control" required data-validation-required-message="This field can't be left blank" name="Body" rows="3"></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary"  style="background-color: #388E8E; border-color: #388E8E">Submit</button>
+                        <button type="submit" class="btn btn-primary"  style="background-color: #388E8E; border-color: #388E8E">Submit</button>                       
                     </form>
                 </div>
                 }
@@ -69,15 +69,15 @@
 
                 <!-- Posted Comments -->
                 <!-- Comment -->
-
+                <div style="">Total Comments (@Model.Comments.Count())</div><br/>
                 @foreach (var comment in Model.Comments.Reverse())
-                {
-                <div class="media">
+                {                   
+                    <div class="media">
                     <a class="pull-left" href="#">
                         <img class="media-object" src="/assets/Comment_Default_Grainy.jpg" alt=""/>
                     </a>
                     <div class="media-body">
-                        <h4 class="media-heading">
+                        <h4 class="media-heading">                           
                             @comment.Author.DisplayName
                             <small>@comment.Created.ToString("g") EST</small>
                         </h4>
@@ -169,8 +169,8 @@
 
                 <!-- Side Widget Well -->
                 <div class="well">
-                    <h4>Side Widget Well</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, perspiciatis adipisci accusamus laudantium odit aliquam repellat tempore quos aspernatur vero.</p>
+                    <h4>My Journey</h4>
+                    <p>Follow me on my journey to become a professional .NET Web Developer.  I'm excited to talk about the work I am doing and to share my experiences with you all!</p>
                 </div>
 
             </div>

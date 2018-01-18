@@ -101,8 +101,9 @@ namespace Ryan_Blog.Controllers
                 }
 
                 blogPost.Slug = Slug;
-                blogPost.Created = System.DateTimeOffset.Now;
+                blogPost.Created = System.DateTime.Now;
                 db.BlogPosts.Add(blogPost);
+
                 db.SaveChanges();
                 return RedirectToAction("Admin");
             }
@@ -136,7 +137,7 @@ namespace Ryan_Blog.Controllers
         {
             if (ModelState.IsValid)
             {
-                blogPost.Updated = System.DateTimeOffset.Now;
+                blogPost.Updated = System.DateTime.Now;
                 db.BlogPosts.Attach(blogPost);
                 db.Entry(blogPost).Property("Title").IsModified = true;
                 db.Entry(blogPost).Property("Body").IsModified = true;
@@ -227,7 +228,7 @@ namespace Ryan_Blog.Controllers
             if (ModelState.IsValid)
             {
                 comment.AuthorId = User.Identity.GetUserId();
-                comment.Created = System.DateTimeOffset.Now;
+                comment.Created = System.DateTime.Now;
                 comment.Body = "<p>"+comment.Body+"</p>";
                 db.Comments.Add(comment);
                 db.SaveChanges();
@@ -262,7 +263,7 @@ namespace Ryan_Blog.Controllers
                 db.Comments.Attach(comment);
                 db.Entry(comment).Property("Body").IsModified = true;
                 db.Entry(comment).Property("Updated").IsModified = true;
-                comment.Updated = System.DateTimeOffset.Now;
+                comment.Updated = System.DateTime.Now;
                 db.SaveChanges();
                 return RedirectToAction("Details", "BlogPosts", new { slug });
             }

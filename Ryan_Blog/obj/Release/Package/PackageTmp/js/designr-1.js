@@ -380,7 +380,18 @@ $(document).ready(function() {
 	}
 
 	$(window).bind('scroll', function () {
-	    var navHeight = 550; // custom nav height
-	    ($(window).scrollTop() > navHeight) ? $('.danny-magic').addClass('search-box') : $('.danny-magic').removeClass('search-box');
-	});
+	    var navHigh = 550; // custom nav height
+	    ($(window).scrollTop() > navHigh) ? $('.danny-magic').addClass('search-box') : $('.danny-magic').removeClass('search-box');
+    });
+
+	//$('.blog-wall').stickem({
+	//    item: '.stickem',
+	//    container: '.stickem-container',
+	//    stickClass: 'stickit',
+	//    endStickClass: 'stickit-end',
+	//    offset: 0,
+	//    onStick: null,
+	//    onUnstick: null
+    //});
+
 });	

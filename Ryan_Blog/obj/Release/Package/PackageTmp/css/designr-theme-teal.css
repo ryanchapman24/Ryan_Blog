@@ -1792,10 +1792,22 @@ margin: 0 0 2em 0;
 
 .search-box {
     position: fixed;
-    z-index: 5;
-    /*width: ;
-    height: ;*/
-    top: 8em;
-    right: 4.5em;
-    width: 33%;
+    z-index: 4;
+    top: 8.8em;
+    right: 6.9em;
+    width: 26.65%;
 }
+
+/*.stickem-container {
+    position: relative;
+}
+.stickit {
+    margin-left: 660px;
+    position: fixed;
+    top: 0;
+}
+.stickit-end {
+    bottom: 0;
+    position: absolute;
+    right: 0;
+}*/

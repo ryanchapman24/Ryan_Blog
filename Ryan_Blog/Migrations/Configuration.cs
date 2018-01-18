@@ -93,6 +93,21 @@ namespace Ryan_Blog.Migrations
             var userId_Antonio = userManager.FindByEmail("araynor@coderfoundry.com").Id;
             userManager.AddToRole(userId_Antonio, "Moderator");
 
+            if (!context.Users.Any(u => u.Email == "your email address"))
+            {
+                userManager.Create(new ApplicationUser
+                {
+                    UserName = "moderator@coderfoundry.com",
+                    Email = "moderator@coderfoundry.com",
+                    FirstName = "Coder",
+                    LastName = "Foundry",
+                    DisplayName = "Coder Foundry",
+                }, "Password-1");
+            }
+
+            var userId_Coder = userManager.FindByEmail("moderator@coderfoundry.com").Id;
+            userManager.AddToRole(userId_Coder, "Moderator");
+
             //  This method will be called after migrating to the latest version.
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 

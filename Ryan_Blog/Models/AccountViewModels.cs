@@ -10,6 +10,7 @@ namespace Ryan_Blog.Models
         public string DisplayName { get; set; }
 
         [Required]
+        [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
     }
